@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:proencagourmet/src/auth/sign_up_screen.dart';
+import 'package:proencagourmet/src/auth/sign_in_screen.dart';
+import 'package:flutter/services.dart';
 
 class CustomTextField extends StatefulWidget {
   final IconData icon; //Final é uma variável
   final String label;
   final bool inSecret;
+  final List<TextInputFormatter>? inputFormatters;
 
   // Esse é um construtor
   const CustomTextField({
@@ -11,6 +18,7 @@ class CustomTextField extends StatefulWidget {
     required this.icon,
     required this.label,
     this.inSecret = false,
+    this.inputFormatters,
   }) : super(key: key);
 
   @override
@@ -22,7 +30,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
 
   @override
   void initState() {
-    // TODO: implement initState
+    super.initState();
 
     isObscure = widget.inSecret;
   }
@@ -32,6 +40,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 15),
       child: TextFormField(
+        inputFormatters: widget.inputFormatters,
         obscureText: isObscure,
         decoration: InputDecoration(
           prefixIcon: Icon(widget.icon),

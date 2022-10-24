@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:proencagourmet/src/auth/components/custom_text_field.dart';
+import 'package:proencagourmet/src/auth/sign_up_screen.dart';
+import 'package:proencagourmet/src/auth/components/config/custom_text_field.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
@@ -10,7 +11,7 @@ class SignInScreen extends StatelessWidget {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: Colors.orangeAccent,
+      backgroundColor: Colors.redAccent,
       body: SingleChildScrollView(
         child: SizedBox(
           height: size.height,
@@ -83,11 +84,15 @@ class SignInScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
+
+
                     //email
                     const CustomTextField(
                       icon: Icons.email,
                       label: 'E-mail',
                     ),
+
+                    
 
                     //senha
                     const CustomTextField(
@@ -95,6 +100,9 @@ class SignInScreen extends StatelessWidget {
                       label: 'Senha',
                       inSecret: true,
                     ),
+
+
+                    //Botão de Entrar
 
                     SizedBox(
                       height: 50,
@@ -114,6 +122,8 @@ class SignInScreen extends StatelessWidget {
                       ),
                     ),
 
+
+                    //Esqueceu a senha
                     Align(
                       alignment: Alignment.centerRight,
                       child: TextButton(
@@ -126,6 +136,8 @@ class SignInScreen extends StatelessWidget {
                     ),
 
                     Padding(
+
+                      //Divisor
                       padding: const EdgeInsets.symmetric(vertical: 10),
                       child: Row(
                         children: [
@@ -149,6 +161,8 @@ class SignInScreen extends StatelessWidget {
                         //Divisor
                       ),
                     ),
+
+
                     // Botão para novo usuário
                     SizedBox(
                       height: 50,
@@ -162,7 +176,15 @@ class SignInScreen extends StatelessWidget {
                             color: Colors.green,
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (c) {
+                                return SignUpScreen();
+                              },
+                            ),
+                          );
+                        },
                         child: const Text(
                           'Criar conta',
                           style: TextStyle(
