@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:proencagourmet/src/auth/sign_up_screen.dart';
-import 'package:proencagourmet/src/auth/sign_in_screen.dart';
+import 'package:proencagourmet/src/pages/auth/sign_up_screen.dart';
+import 'package:proencagourmet/src/pages/auth/sign_in_screen.dart';
 import 'package:flutter/services.dart';
 
 class CustomTextField extends StatefulWidget {

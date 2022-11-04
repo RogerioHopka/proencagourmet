@@ -1,7 +1,8 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:proencagourmet/src/auth/sign_up_screen.dart';
-import 'package:proencagourmet/src/auth/components/config/custom_text_field.dart';
+import 'package:proencagourmet/src/models/base/base_screem.dart';
+import 'package:proencagourmet/src/pages/auth/sign_up_screen.dart';
+import 'package:proencagourmet/src/pages/auth/components/config/custom_text_field.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
@@ -11,7 +12,7 @@ class SignInScreen extends StatelessWidget {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: Colors.redAccent,
+      backgroundColor: Colors.black,
       body: SingleChildScrollView(
         child: SizedBox(
           height: size.height,
@@ -33,14 +34,14 @@ class SignInScreen extends StatelessWidget {
                           TextSpan(
                             text: 'Proença',
                             style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.lightGreenAccent,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
                           TextSpan(
                             text: 'Gourmet',
                             style: TextStyle(
-                              color: Colors.green,
+                              color: Colors.orange,
                             ),
                           ),
                         ],
@@ -84,15 +85,11 @@ class SignInScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-
-
                     //email
                     const CustomTextField(
                       icon: Icons.email,
                       label: 'E-mail',
                     ),
-
-                    
 
                     //senha
                     const CustomTextField(
@@ -100,7 +97,6 @@ class SignInScreen extends StatelessWidget {
                       label: 'Senha',
                       inSecret: true,
                     ),
-
 
                     //Botão de Entrar
 
@@ -112,7 +108,13 @@ class SignInScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(18),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).pushReplacement(
+                            MaterialPageRoute(builder: (c) {
+                              return BaseScreen();
+                            }),
+                          );
+                        },
                         child: const Text(
                           'Entrar',
                           style: TextStyle(
@@ -121,7 +123,6 @@ class SignInScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-
 
                     //Esqueceu a senha
                     Align(
@@ -136,7 +137,6 @@ class SignInScreen extends StatelessWidget {
                     ),
 
                     Padding(
-
                       //Divisor
                       padding: const EdgeInsets.symmetric(vertical: 10),
                       child: Row(
@@ -161,7 +161,6 @@ class SignInScreen extends StatelessWidget {
                         //Divisor
                       ),
                     ),
-
 
                     // Botão para novo usuário
                     SizedBox(

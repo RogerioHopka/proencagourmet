@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:proencagourmet/src/auth/sign_in_screen.dart';
+import 'package:proencagourmet/src/pages/auth/sign_in_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,8 +14,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Proença Gourmet',
       theme: ThemeData(
-        primarySwatch: Colors.deepOrange,
-      ),
+          primarySwatch: Colors.deepOrange,
+          scaffoldBackgroundColor: Colors.grey.withAlpha(190)),
       debugShowCheckedModeBanner: false,
       home: const SignInScreen(),
     );
